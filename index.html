@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carousel</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script>
+      let i = 0,j = 1;
+      let images = [];
+      let str = [];
+      images[0] = "./images/1.jpg";
+      images[1] = "./images/2.jpg";
+      images[2] = "./images/3.jpg";
+      images[3] = "./images/4.jpg";
+      str[0] = "A sunset image";
+      str[1] = "Image of birds";
+      str[2] = "Image of a bridge over a lake surrounded by greenery";
+      str[3] = "Plant with a purple tint on the image";
+      function changeImg() {
+        document.slider.src = images[i];
+        document.getElementById("para").innerHTML = str[i];
+        // To check when we reach the end of the array
+        if (i !== images.length - 1) {
+          i++;
+        } else {
+          i = 0;
+        }
+      }
+      function addImage() {
+        let src = prompt("Enter the source of image");
+        images[images.length] = src;
+        var desc = prompt("Enter the description of image");
+        str[images.length - 1] = desc;
+      }
+      window.onload = changeImg;
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+      <img name="slider" width="650" height="450" />
+    </div>
+    <br />
+    <div class="textButton">
+      <p id="para"></p>
+      <button type="button" onclick="changeImg()">NextImage</button>
+      <br />
+      <button type="button" onclick="addImage()">AddImage</button>
+      <br />
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

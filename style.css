@@ -1,0 +1,18 @@
+.container{
+     display: flex;
+     justify-content:center;
+ }
+
+.textButton{
+    text-align:center;
+    color:black;
+    font-weight: bold;
+}
+
+button{
+    margin:10px;
+    background-color: aquamarine;
+    height:50px;
+    width:100px;
+    border-radius: 10px;
+}
